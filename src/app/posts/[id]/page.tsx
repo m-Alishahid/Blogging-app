@@ -54,16 +54,13 @@ interface Post {
   imageUrl: string;
 }
 
-interface PostPageProps {
-  params: { id: string };
-}
-
+// Fetch the post data based on the ID
 async function fetchPost(id: string): Promise<Post | null> {
   const post = posts.find((p) => p.id === id) || null;
   return post;
 }
 
-export default async function Post({ params }: PostPageProps) {
+export default async function Post({ params }: { params: { id: string } }) {
   const post = await fetchPost(params.id);
 
   if (!post) {
