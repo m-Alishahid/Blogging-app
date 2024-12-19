@@ -52,7 +52,7 @@ const posts = [
 ];
 
 export default async function Posts({ params }: { params: { id: string } }) {
-  const resolvedParams = await params; // Await the params promise
+  const resolvedParams = params; // Await the params promise
   const { id } = resolvedParams;
 
   const post = posts.find((p) => p.id === id);
