@@ -1,3 +1,4 @@
+
 import React from "react";
 import CommentSection from "@/components/CommentsSection";
 import AutherCard from "@/components/AutherCard";
@@ -60,7 +61,7 @@ async function fetchPost(id: string): Promise<Post | null> {
   return post;
 }
 
-export default async function Post({ params }: { params: { id: string } }) {
+export default async function PostPage({ params }: { params: { id: string } }) {
   const post = await fetchPost(params.id);
 
   if (!post) {
