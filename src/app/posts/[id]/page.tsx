@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CommentSection from '@/components/CommentsSection';
 import AutherCard from '@/components/AutherCard';
@@ -8,17 +7,17 @@ const posts = [
     id: "1",
     title: "Revolutionizing Web Development with Next.js",
     description:
-      "Next.js simplifies server-side rendering (SSR) by rendering pages on the server before sending them to the client, improving SEO and reducing page load time. It enhances app performance through automatic code splitting, optimized static assets, image optimization, and static site generation (SSG), ensuring faster load times and a better user experience. The framework also improves the developer experience with features like file-based routing, hot module replacement (HMR), built-in TypeScript support, and API routes, making development faster and more efficient. Additionally, Next.js supports incremental static regeneration (ISR) for real-time content updates and offers internationalization (i18n) support, all while being easily deployable on platforms like Vercel.",
+      "Next.js simplifies server-side rendering (SSR) by rendering pages on the server before sending them to the client...",
     imageUrl: "/mega.jpg",
   },
   {
     id: "2",
     title: "Exploring the Power of Generative AI in 2024",
     description:
-      "Generative AI tools like ChatGPT are revolutionizing various industries by automating tasks, enhancing productivity, and enabling new creative possibilities. In content creation, these tools help generate articles, blogs, marketing copy, and social media posts, saving time and effort for writers. In the entertainment industry, they assist in scriptwriting, music composition, and even video game design by producing creative content based on user input For software development, generative AI is transforming code generation by providing developers with automated code suggestions, debugging assistance, and even full code generation, speeding up the development process. In design, AI tools can create images, logos, and even 3D models, enabling designers to experiment with various concepts quickly. These advancements are not limited to creative fields; AI is also enhancing data analysis, customer service, and medical research, where it generates insights, automates repetitive tasks, and supports decision-making Overall, generative AI is reshaping industries by reducing manual effort, accelerating processes, and empowering professionals to focus on more strategic, high-level tasks.",
+      "Generative AI tools like ChatGPT are revolutionizing various industries...",
     imageUrl: "/AI.png",
   },
-
+  
 
   {
     id: "3",
@@ -48,12 +47,10 @@ const posts = [
 
     imageUrl: "/cloud.jpg",
   },
-
 ];
 
-export default async function Posts({ params }: { params: { id: string } }) {
-  const resolvedParams = params; // Await the params promise
-  const { id } = resolvedParams;
+export default function Posts({ params }: { params: { id: string } }) {
+  const { id } = params; // Access the id directly from params
 
   const post = posts.find((p) => p.id === id);
 
